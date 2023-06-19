@@ -1,24 +1,40 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
+import { useRouter } from 'next/navigation'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 export default function LocomotiveScroll({ children }) {
     const containerRef = useRef(null)
+    const { asPath } = useRouter()
 
-    if (typeof window === 'undefined') {
-        return (
-            <LocomotiveScrollProvider
-                options={{
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger)
+    }, [])
+
+    return (
+        <LocomotiveScrollProvider
+            options={{
+                smooth: true,
+                smartphone: {
                     smooth: true,
-                }}
-                watch={[]}
-                containerRef={containerRef}
-            >
-                <div ref={containerRef}>{children}</div>
-            </LocomotiveScrollProvider>
-        )
-    } else {
-        return null
-    }
+                },
+                tablet: {
+                    smooth: true,
+                },
+            }}
+            watch={[]}
+            location={asPath}
+            onLocationChange={(scroll) =>
+                scroll.scrollTo(0, { duration: 0, disableLerp: true })
+            }
+            containerRef={containerRef}
+        >
+            <div data-scroll-container ref={containerRef}>
+                {children}
+            </div>
+        </LocomotiveScrollProvider>
+    )
 }

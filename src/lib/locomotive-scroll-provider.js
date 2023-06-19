@@ -1,13 +1,15 @@
 'use client'
 
 import { useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default function LocomotiveScrollProvider({ children }) {
     useEffect(() => {
-        let scroll
+        let locoScroll
 
         import('locomotive-scroll').then((locomotiveModule) => {
-            scroll = new locomotiveModule.default({
+            locoScroll = new locomotiveModule.default({
                 el: document.querySelector('[data-scroll-container]'),
                 smooth: true,
                 smoothMobile: false,
@@ -15,26 +17,53 @@ export default function LocomotiveScrollProvider({ children }) {
                 getDirection: true,
             })
 
-            // scroll.on('scroll', (instance) => {
-            //     document.documentElement.setAttribute(
-            //         'data-direction',
-            //         instance.direction
-            //     )
-            // })
+            locoScroll.on('scroll', () => {
+                ScrollTrigger.update()
+            })
+
+            gsap.registerPlugin(ScrollTrigger)
+
+            ScrollTrigger.scrollerProxy('.smooth-scroll-gsap', {
+                scrollTop(value) {
+                    return arguments.length
+                        ? locoScroll.scrollTo(value, {
+                              duration: 0,
+                              disableLerp: true,
+                          })
+                        : locoScroll.scroll.instance.scroll.y
+                },
+                getBoundingClientRect() {
+                    return {
+                        top: 0,
+                        left: 0,
+                        width: window.innerWidth,
+                        height: window.innerHeight,
+                    }
+                },
+
+                pinType: document.querySelector('.smooth-scroll-gsap').style
+                    .transform
+                    ? 'transform'
+                    : 'fixed',
+            })
+
+            ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
+
+            ScrollTrigger.refresh()
         })
 
         window.addEventListener('DOMContentLoaded', () => {
-            scroll.update()
+            locoScroll.update()
         })
 
         window.addEventListener('resize', () => {
-            scroll.update()
+            locoScroll.update()
         })
-
-        return () => {
-            if (scroll) scroll.destroy()
-        }
     }, [])
 
-    return <div data-scroll-container>{children}</div>
+    return (
+        <div data-scroll-container>
+            <div className="smooth-scroll-gsap">{children}</div>
+        </div>
+    )
 }

@@ -20,7 +20,7 @@ const inter = Inter({
 import AuthProvider from '@/utils/AuthProvider'
 import Nav from '@/components/UI/Nav'
 import Pattern from '@/components/UI/Pattern'
-import LocomotiveScrollProvider from '@/lib/locomotive-scroll-provider'
+import LocomotiveScroll from '@/lib/locomotive-scroll'
 
 export const metadata = {
     title: 'Mémoire Vive',
@@ -36,11 +36,11 @@ export default function AppLayout({ children }) {
                 className={`${neuebit.variable} ${inter.variable} font-sans`}
             >
                 <body>
-                    <LocomotiveScrollProvider>
+                    <LocomotiveScroll>
                         {/* <Pattern /> */}
                         <Nav />
-                        <main>{children}</main>
-                    </LocomotiveScrollProvider>
+                        <main className="relative z-[10]">{children}</main>
+                    </LocomotiveScroll>
                 </body>
             </html>
         </AuthProvider>
