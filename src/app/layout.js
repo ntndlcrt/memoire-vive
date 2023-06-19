@@ -1,5 +1,5 @@
-import localFont from '@next/font/local'
-import { Inter } from '@next/font/google'
+import localFont from 'next/font/local'
+import { Inter } from 'next/font/google'
 
 const neuebit = localFont({
     src: [
@@ -20,6 +20,7 @@ const inter = Inter({
 import AuthProvider from '@/utils/AuthProvider'
 import Nav from '@/components/UI/Nav'
 import Pattern from '@/components/UI/Pattern'
+import LocomotiveScrollProvider from '@/lib/locomotive-scroll-provider'
 
 export const metadata = {
     title: 'Mémoire Vive',
@@ -35,9 +36,11 @@ export default function AppLayout({ children }) {
                 className={`${neuebit.variable} ${inter.variable} font-sans`}
             >
                 <body>
-                    {/* <Pattern /> */}
-                    <Nav />
-                    <main>{children}</main>
+                    <LocomotiveScrollProvider>
+                        {/* <Pattern /> */}
+                        <Nav />
+                        <main>{children}</main>
+                    </LocomotiveScrollProvider>
                 </body>
             </html>
         </AuthProvider>

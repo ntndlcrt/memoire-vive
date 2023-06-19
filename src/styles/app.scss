@@ -6,6 +6,8 @@
 
 @import './_atoms/buttons';
 
+@import './_libs/locomotiveScroll';
+
 html {
     font-size: 62.5%;
     padding: 0;
@@ -18,6 +20,6 @@ body {
     overflow-x: hidden;
     font-size: 1.05vw;
     line-height: 1.3;
-    background-color: #0A0917;
+    background-color: black;
     color: white;
 }

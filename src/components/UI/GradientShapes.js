@@ -85,7 +85,7 @@ export function Ring() {
                     gradientUnits="userSpaceOnUse"
                 >
                     <stop offset="0.193586" stopColor="#0000B0" />
-                    <stop offset="1" stop-opacity="0" />
+                    <stop offset="1" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_114_634"
@@ -216,7 +216,7 @@ export function BlurredRing() {
                     gradientUnits="userSpaceOnUse"
                 >
                     <stop offset="0.193586" stopColor="#0000B0" />
-                    <stop offset="1" stop-opacity="0" />
+                    <stop offset="1" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_48_537"

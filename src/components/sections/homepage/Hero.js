@@ -4,8 +4,15 @@ import { BlurredRing } from '@/components/UI/GradientShapes'
 
 export default function Hero() {
     return (
-        <section className="w-screen h-screen flex items-center justify-center relative mb-[18vw]">
-            <div className="z-50 flex flex-col items-center row">
+        <section
+            className="w-screen h-screen flex items-center justify-center relative mb-[18vw]"
+            data-scroll-section
+        >
+            <div
+                className="z-50 flex flex-col items-center row"
+                data-scroll
+                data-scroll-speed="-1"
+            >
                 <h1 className="leading-[0.9] flex flex-col mb-[1.11vw]">
                     <span className="text-[6vw]">Preserve the legacy,</span>
                     <span className="font-bit text-[10vw]">
@@ -20,7 +27,12 @@ export default function Hero() {
                     Learn more
                 </Link>
             </div>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-[10]">
+            <div
+                className="absolute w-full z-[10]"
+                data-scroll
+                data-scroll-speed="-2"
+                data-scroll-delay="0.01"
+            >
                 <BlurredRing />
             </div>
         </section>
