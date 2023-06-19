@@ -1,0 +1,5 @@
+@layer components {
+    .button {
+        @apply px-[2.22vw] py-[0.98vw] bg-white text-black leading-[1] rounded-full;
+    }
+}
