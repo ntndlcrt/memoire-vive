@@ -2,7 +2,7 @@ export default function Pattern() {
     return (
         <svg
             style={{ width: '100vw', height: '380vw', mixBlendMode: 'overlay' }}
-            className="fixed z-[500] top-0 left-0"
+            className="absolute z-[20] top-0 left-0"
             viewBox="0 0 1440 5466"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

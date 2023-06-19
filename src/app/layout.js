@@ -12,19 +12,18 @@ const neuebit = localFont({
 })
 
 const inter = Inter({
-    weight: ['400', '500', '600', '700', '800', '900'],
+    weight: ['300', '400', '500', '600', '700', '800', '900'],
     subsets: ['latin'],
     variable: '--font-inter',
 })
 
 import AuthProvider from '@/utils/AuthProvider'
-import Nav from '@/components/Nav'
+import Nav from '@/components/UI/Nav'
+import Pattern from '@/components/UI/Pattern'
 
 export const metadata = {
     title: 'Mémoire Vive',
 }
-
-import Pattern from '@/components/Pattern'
 
 import '@/styles/app.scss'
 
@@ -36,7 +35,7 @@ export default function AppLayout({ children }) {
                 className={`${neuebit.variable} ${inter.variable} font-sans`}
             >
                 <body>
-                    <Pattern />
+                    {/* <Pattern /> */}
                     <Nav />
                     <main>{children}</main>
                 </body>
