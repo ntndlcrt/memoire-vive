@@ -19,7 +19,7 @@ export default function Hero() {
                     trigger: containerRef.current,
                     start: 'top top',
                     end: 'bottom top',
-                    scrub: true,
+                    scrub: 1.5,
                 },
             })
 
@@ -54,7 +54,7 @@ export default function Hero() {
             </div>
             <div
                 ref={elementRef}
-                className="absolute w-[135vw] h-[135vw] bottom-0 translate-y-[20vw] transition-all"
+                className="absolute w-[135vw] h-[135vw] bottom-0 translate-y-[20vw]"
             >
                 <Image
                     src="/images/gradients/hp-hero.webp"
