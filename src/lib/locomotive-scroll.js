@@ -1,18 +1,12 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { useRouter } from 'next/navigation'
-import { gsap } from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 
 export default function LocomotiveScroll({ children }) {
     const containerRef = useRef(null)
     const { asPath } = useRouter()
-
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger)
-    }, [])
 
     return (
         <LocomotiveScrollProvider
