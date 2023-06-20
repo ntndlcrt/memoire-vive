@@ -60,7 +60,7 @@ export default function Join() {
         <section ref={containerRef} className="flex justify-center mb-[38vw]">
             <div
                 ref={elementRef}
-                className="w-screen h-screen bg-black flex items-center"
+                className="w-screen h-screen bg-black flex items-center relative"
                 style={{
                     willChange: 'clip-path',
                 }}
