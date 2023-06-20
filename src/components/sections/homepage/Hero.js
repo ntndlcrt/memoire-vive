@@ -4,7 +4,7 @@ import { BlurredRing } from '@/components/UI/GradientShapes'
 
 export default function Hero() {
     return (
-        <section className="w-screen h-screen flex items-center justify-center relative mb-[18vw]">
+        <section className="w-screen h-screen flex items-center justify-center relative mb-[15vw]">
             <div
                 className="z-50 flex flex-col items-center row"
                 data-scroll
@@ -27,8 +27,8 @@ export default function Hero() {
             <div
                 className="absolute w-full z-[10]"
                 data-scroll
-                data-scroll-speed="-2"
-                data-scroll-delay="0.01"
+                data-scroll-speed="-3"
+                data-scroll-delay="0.02"
             >
                 <BlurredRing />
             </div>
