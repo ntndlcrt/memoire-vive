@@ -6,7 +6,6 @@ export default function Home() {
         <>
             <Hero />
             <JoinScroll />
-            <div className="py-[100vw]">WORLD</div>
         </>
     )
 }

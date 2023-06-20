@@ -12,5 +12,10 @@ module.exports = {
             bit: ['var(--font-neuebit)'],
         },
     },
-    plugins: [],
+    plugins: [
+        function ({ addVariant }) {
+            addVariant('child', '& > *')
+            addVariant('child-hover', '& > *:hover')
+        },
+    ],
 }

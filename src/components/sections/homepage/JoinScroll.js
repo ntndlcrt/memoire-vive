@@ -57,7 +57,7 @@ export default function JoinScroll() {
     }, [])
 
     return (
-        <section ref={containerRef} className="flex justify-center">
+        <section ref={containerRef} className="flex justify-center mb-[38vw]">
             <div
                 ref={elementRef}
                 className="w-screen h-screen bg-black flex items-center"

@@ -19,6 +19,7 @@ const inter = Inter({
 
 import AuthProvider from '@/utils/AuthProvider'
 import Nav from '@/components/UI/Nav'
+import Footer from '@/components/UI/Footer'
 
 export const metadata = {
     title: 'Mémoire Vive',
@@ -36,6 +37,7 @@ export default function AppLayout({ children }) {
                 <body>
                     <Nav />
                     <main className="relative z-[10]">{children}</main>
+                    <Footer />
                 </body>
             </html>
         </AuthProvider>
