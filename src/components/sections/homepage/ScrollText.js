@@ -1,10 +1,9 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-
-import { HpScrollText } from '@/components/UI/GradientShapes'
 
 export default function ScrollText() {
     const containerRef = useRef(null)
@@ -57,8 +56,12 @@ export default function ScrollText() {
                     Our wealth is our memories
                 </div>
             </div>
-            <div className="absolute -top-[20vw] left-0 w-screen z-10 blur-[6rem]">
-                <HpScrollText />
+            <div className="absolute -translate-y-[45vw] left-1/2 -translate-x-1/2 w-[275vw] h-[275vw]">
+                <Image
+                    src="/images/gradients/hp-scroll-text.webp"
+                    alt="Scroll text"
+                    fill={true}
+                />
             </div>
         </section>
     )

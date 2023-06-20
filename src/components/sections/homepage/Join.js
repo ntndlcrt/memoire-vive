@@ -4,9 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Link from 'next/link'
-
-import { PatternHpJoin } from '@/components/UI/Pattern'
-import { HpJoin } from '@/components/UI/GradientShapes'
+import Image from 'next/image'
 
 export default function Join() {
     const containerRef = useRef(null)
@@ -22,7 +20,7 @@ export default function Join() {
             })
 
             gsap.set(shapesRef.current, {
-                top: '6vw',
+                yPercent: 10,
             })
 
             const tl = gsap.timeline({
@@ -41,7 +39,7 @@ export default function Join() {
             tl.to(
                 shapesRef.current,
                 {
-                    top: '0vw',
+                    yPercent: 0,
                 },
                 '<'
             )
@@ -82,12 +80,13 @@ export default function Join() {
                 </div>
                 <div
                     ref={shapesRef}
-                    className="absolute top-0 left-0 z-10 w-screen h-[78.6vw] blur-[2.8rem]"
+                    className="absolute bottom-0 left-0 -translate-x-[12%] translate-y-1/4 w-[210vw] h-[115vw]"
                 >
-                    <HpJoin />
-                </div>
-                <div className="absolute inset-0 mix-blend-overlay z-20 overflow-hidden fade-out-div">
-                    <PatternHpJoin />
+                    <Image
+                        src="/images/gradients/hp-join.webp"
+                        alt="Join"
+                        fill={true}
+                    />
                 </div>
             </div>
         </section>

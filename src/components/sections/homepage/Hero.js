@@ -1,7 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
-import { HpHero } from '@/components/UI/GradientShapes'
-import { PatternHpHero } from '@/components/UI/Pattern'
+// import { HpHero } from '@/components/UI/GradientShapes'
+// import { PatternHpHero } from '@/components/UI/Pattern'
 
 export default function Hero() {
     return (
@@ -21,12 +22,19 @@ export default function Hero() {
                     Learn more
                 </Link>
             </div>
-            <div className="absolute top-0 z-[10] blur-[3rem]">
+            <div className="absolute w-[135vw] h-[135vw] bottom-0 translate-y-[20vw]">
+                <Image
+                    src="/images/gradients/hp-hero.webp"
+                    alt="Hero"
+                    fill={true}
+                />
+            </div>
+            {/* <div className="absolute top-0 z-[10] blur-[3rem]">
                 <HpHero />
             </div>
             <div className="absolute inset-0 mix-blend-overlay z-20 overflow-hidden fade-out-div">
                 <PatternHpHero />
-            </div>
+            </div> */}
         </section>
     )
 }
