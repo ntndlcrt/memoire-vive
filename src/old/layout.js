@@ -1,5 +1,6 @@
 import localFont from 'next/font/local'
 import { Inter } from 'next/font/google'
+import Head from 'next/head'
 
 const neuebit = localFont({
     src: [
@@ -35,6 +36,9 @@ export default function AppLayout({ children }) {
                 lang="en"
                 className={`${neuebit.variable} ${inter.variable} font-sans`}
             >
+                <Head>
+                    <title>Mémoire Vive</title>
+                </Head>
                 <body>
                     <LocomotiveScroll>
                         {/* <Pattern /> */}

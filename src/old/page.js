@@ -3,7 +3,7 @@ import Remember from '@/components/sections/homepage/Remember'
 
 export default function Home() {
     return (
-        <div data-scroll-section>
+        <div>
             <Hero />
             <Remember />
         </div>
