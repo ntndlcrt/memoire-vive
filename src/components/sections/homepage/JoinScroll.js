@@ -29,7 +29,7 @@ export default function JoinScroll() {
                 scrollTrigger: {
                     trigger: elementRef.current,
                     start: 'top top',
-                    end: '+=50%',
+                    end: '+=25%',
                     scrub: true,
                     pin: true,
                 },
@@ -61,6 +61,9 @@ export default function JoinScroll() {
             <div
                 ref={elementRef}
                 className="w-screen h-screen bg-black flex items-center"
+                style={{
+                    willChange: 'clip-path',
+                }}
             >
                 <div className="row relative z-40 flex flex-col items-center">
                     <h3 className="leading-[0.9] flex flex-col items-center text-center mb-[1.11vw]">
@@ -79,7 +82,7 @@ export default function JoinScroll() {
                 </div>
                 <div
                     ref={shapesRef}
-                    className="absolute top-0 left-0 z-10 w-screen h-[78.6vw] blur-[4.8rem]"
+                    className="absolute top-0 left-0 z-10 w-screen h-[78.6vw] blur-[2.8rem]"
                 >
                     <HpJoin />
                 </div>
