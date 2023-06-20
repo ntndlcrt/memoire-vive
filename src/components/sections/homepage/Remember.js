@@ -51,6 +51,8 @@ export default function Remember() {
                 ref={elementRef}
                 className="w-[24.5vw] h-[36.5vw] absolute left-1/2 top-1/2 -translate-x-1/2 z-20 rounded-[0.5vw] overflow-hidden"
             >
+                <div className="w-[1.11vw] h-[1.11vw] bg-white z-[60] top-[1.67vw] left-[1.67vw] absolute"></div>
+                <div className="w-[1.11vw] h-[1.11vw] bg-white z-[60] top-[1.67vw] right-[1.67vw] absolute"></div>
                 <div className="absolute inset-0 z-50" ref={elementPixelRef}>
                     <Image
                         src="/images/pictures/lamp-post-pixel.webp"
@@ -58,10 +60,14 @@ export default function Remember() {
                         fill={true}
                     />
                 </div>
+                <span className="absolute z-30 font-200 bottom-[1.11vw] left-[1.11vw] font-extralight">
+                    Summer Holiday 2010 | St Raphaël
+                </span>
                 <Image
                     src="/images/pictures/lamp-post.webp"
                     alt=""
                     fill={true}
+                    className="relative z-10"
                 />
             </div>
         </section>
