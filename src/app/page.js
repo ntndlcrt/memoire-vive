@@ -1,11 +1,12 @@
 import Hero from '@/components/sections/homepage/Hero'
-import Remember from '@/components/sections/homepage/Remember'
+import JoinScroll from '@/components/sections/homepage/JoinScroll'
 
 export default function Home() {
     return (
-        <div data-scroll-section>
+        <>
             <Hero />
-            <Remember />
-        </div>
+            <JoinScroll />
+            <div className="py-[100vw]">WORLD</div>
+        </>
     )
 }
