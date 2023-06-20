@@ -27,8 +27,8 @@ export default function Join() {
                 scrollTrigger: {
                     trigger: elementRef.current,
                     start: 'top top',
-                    end: '+=25%',
-                    scrub: true,
+                    end: '+=50%',
+                    scrub: 0.5,
                     pin: true,
                 },
             })
@@ -55,7 +55,7 @@ export default function Join() {
     }, [])
 
     return (
-        <section ref={containerRef} className="flex justify-center mb-[38vw]">
+        <section ref={containerRef} className="flex justify-center mb-[54vw]">
             <div
                 ref={elementRef}
                 className="w-screen h-screen bg-black flex items-center relative"

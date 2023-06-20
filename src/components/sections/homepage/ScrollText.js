@@ -27,7 +27,7 @@ export default function ScrollText() {
                     trigger: containerRef.current,
                     start: 'top bottom',
                     end: 'bottom top',
-                    scrub: true,
+                    scrub: 0.5,
                 },
             })
 
