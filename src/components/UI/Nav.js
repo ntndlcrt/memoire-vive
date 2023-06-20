@@ -13,6 +13,41 @@ export default function Nav() {
     const mousePosition = MousePosition()
     const mouse = useRef({ x: 0, y: 0 })
     const containerSize = useRef({ w: 0, h: 0 })
+    const [scrollDir, setScrollDir] = useState(null)
+    const threshold = 100
+
+    useEffect(() => {
+        let previousScrollYPosition = window.scrollY
+
+        const scrolledMoreThanThreshold = (currentScrollYPosition) =>
+            Math.abs(currentScrollYPosition - previousScrollYPosition) >
+            threshold
+
+        const isScrollingUp = (currentScrollYPosition) =>
+            currentScrollYPosition > previousScrollYPosition &&
+            !(previousScrollYPosition > 0 && currentScrollYPosition === 0) &&
+            !(currentScrollYPosition > 0 && previousScrollYPosition === 0)
+
+        const updateScrollDirection = () => {
+            const currentScrollYPosition = window.scrollY
+
+            if (scrolledMoreThanThreshold(currentScrollYPosition)) {
+                const newScrollDirection = isScrollingUp(currentScrollYPosition)
+                    ? 'down'
+                    : 'up'
+                setScrollDir(newScrollDirection)
+                previousScrollYPosition =
+                    currentScrollYPosition > 0 ? currentScrollYPosition : 0
+            }
+        }
+
+        const onScroll = () =>
+            window.requestAnimationFrame(updateScrollDirection)
+
+        window.addEventListener('scroll', onScroll)
+
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
 
     useEffect(() => {
         initContainer()
@@ -64,7 +99,9 @@ export default function Nav() {
     return (
         <nav
             ref={containerRef}
-            className="w-screen fixed top-0 left-0 flex backdrop-blur-[1.2rem] z-[1000] overflow-hidden group"
+            className={`w-screen fixed top-0 left-0 flex backdrop-blur-[1.2rem] z-[1000] overflow-hidden group transition-all ${
+                scrollDir === 'down' ? '-translate-y-full' : '-translate-y-0'
+            }`}
         >
             <div className="w-full pt-[2vw] pb-[1vw] relative h-full rounded-3xl p-px before:absolute before:w-80 before:bg-[#AFA7FF99] before:h-80 before:-left-40 before:-top-40 before:rounded-full before:opacity-0 before:pointer-events-none before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:group-hover:opacity-100 before:z-20 before:blur-[100px]">
                 <div className="row grid grid-cols-3 items-end relative z-30">
