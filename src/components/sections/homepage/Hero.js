@@ -1,15 +1,12 @@
 import Link from 'next/link'
 
-import { BlurredRing } from '@/components/UI/GradientShapes'
+import { HpHero } from '@/components/UI/GradientShapes'
+import { PatternHpHero } from '@/components/UI/Pattern'
 
 export default function Hero() {
     return (
-        <section className="w-screen h-screen flex items-center justify-center relative mb-[15vw]">
-            <div
-                className="z-50 flex flex-col items-center row"
-                data-scroll
-                data-scroll-speed="-1"
-            >
+        <section className="w-screen h-screen flex items-center justify-center relative mb-[15vw] bg-black">
+            <div className="z-40 flex flex-col items-center row">
                 <h1 className="leading-[0.9] flex flex-col mb-[1.11vw]">
                     <span className="text-[6vw]">Preserve the legacy,</span>
                     <span className="font-bit text-[10vw]">
@@ -24,13 +21,11 @@ export default function Hero() {
                     Learn more
                 </Link>
             </div>
-            <div
-                className="absolute w-full z-[10]"
-                data-scroll
-                data-scroll-speed="-3"
-                data-scroll-delay="0.02"
-            >
-                <BlurredRing />
+            <div className="absolute top-0 z-[10] blur-[3rem]">
+                <HpHero />
+            </div>
+            <div className="absolute inset-0 mix-blend-overlay z-20 overflow-hidden fade-out-div">
+                <PatternHpHero />
             </div>
         </section>
     )

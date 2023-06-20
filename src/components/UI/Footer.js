@@ -49,7 +49,7 @@ export default function Footer() {
                             <Link href="/">Q&A</Link>
                         </div>
                     </div>
-                    <span className="text-indigo-500 text-[0.55vw] ml-[3.33vw]">
+                    <span className="text-gray-400 text-[0.55vw] ml-[3.33vw]">
                         © 2023 ALL RIGHTS RESERVED
                     </span>
                 </div>

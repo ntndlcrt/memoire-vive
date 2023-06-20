@@ -1,11 +1,13 @@
 import Hero from '@/components/sections/homepage/Hero'
-import JoinScroll from '@/components/sections/homepage/JoinScroll'
+import ScrollText from '@/components/sections/homepage/ScrollText'
+import Join from '@/components/sections/homepage/Join'
 
 export default function Home() {
     return (
         <>
             <Hero />
-            <JoinScroll />
+            <ScrollText />
+            <Join />
         </>
     )
 }
