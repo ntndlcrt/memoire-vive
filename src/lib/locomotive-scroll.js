@@ -1,34 +1,66 @@
 'use client'
 
-import { useRef } from 'react'
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
-import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-export default function LocomotiveScroll({ children }) {
-    const containerRef = useRef(null)
-    const { asPath } = useRouter()
+export default function LocomotiveScrollProvider({ children }) {
+    useEffect(() => {
+        let locoScroll
+
+        import('locomotive-scroll').then((locomotiveModule) => {
+            gsap.registerPlugin(ScrollTrigger)
+
+            locoScroll = new locomotiveModule.default({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true,
+                smoothMobile: false,
+                resetNativeScroll: true,
+                getDirection: true,
+            })
+
+            locoScroll.on('scroll', () => {
+                ScrollTrigger.update()
+            })
+
+            ScrollTrigger.scrollerProxy('.smooth-scroll-gsap', {
+                scrollTop(value) {
+                    return arguments.length
+                        ? locoScroll.scrollTo(value, 0, 0)
+                        : locoScroll.scroll.instance.scroll.y
+                },
+                getBoundingClientRect() {
+                    return {
+                        top: 0,
+                        left: 0,
+                        width: window.innerWidth,
+                        height: window.innerHeight,
+                    }
+                },
+
+                pinType: document.querySelector('.smooth-scroll-gsap').style
+                    .transform
+                    ? 'transform'
+                    : 'fixed',
+            })
+
+            ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
+
+            ScrollTrigger.refresh()
+        })
+
+        window.addEventListener('DOMContentLoaded', () => {
+            locoScroll.update()
+        })
+
+        window.addEventListener('resize', () => {
+            locoScroll.update()
+        })
+    }, [])
 
     return (
-        <LocomotiveScrollProvider
-            options={{
-                smooth: true,
-                smartphone: {
-                    smooth: true,
-                },
-                tablet: {
-                    smooth: true,
-                },
-            }}
-            watch={[]}
-            location={asPath}
-            onLocationChange={(scroll) =>
-                scroll.scrollTo(0, { duration: 0, disableLerp: true })
-            }
-            containerRef={containerRef}
-        >
-            <div data-scroll-container ref={containerRef}>
-                {children}
-            </div>
-        </LocomotiveScrollProvider>
+        <div data-scroll-container>
+            <div className="smooth-scroll-gsap">{children}</div>
+        </div>
     )
 }
