@@ -30,6 +30,9 @@ export default function About() {
                     </p>
                 </div>
             </div>
+            <div className="row flex flex-nowrap">
+                <div className="w-[30vw] aspect-square rounded-[1vw]"></div>
+            </div>
         </section>
     )
 }
