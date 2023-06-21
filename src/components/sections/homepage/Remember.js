@@ -23,7 +23,7 @@ export default function Remember() {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top top',
-                    end: '+=50%',
+                    end: '+=75%',
                     scrub: 0.5,
                     pin: true,
                 },
