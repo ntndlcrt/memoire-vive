@@ -58,7 +58,7 @@ export default function Showcase() {
     }, [])
 
     return (
-        <section ref={containerRef}>
+        <section ref={containerRef} className="mb-[55vw]">
             <div className="row relative pb-[10.42vw] mb-[5vw] z-40">
                 <div
                     ref={titleRef}
