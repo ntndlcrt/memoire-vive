@@ -29,7 +29,7 @@ export default async function Page() {
             <div className="row flex justify-center h-screen items-center relative z-20">
                 <div className="flex flex-col items-center text-center w-[30vw]">
                     <div className="text-[2.7vw] font-bold mb-[1vw] leading-[1] flex flex-col items-center">
-                        <span>Let's remember</span>
+                        <span>Let&apos;s remember</span>
                         <span className="font-bit text-[4.5vw]">together</span>
                     </div>
                     <p className="text-[1.1vw] text-gray-200 mb-[3vw]">

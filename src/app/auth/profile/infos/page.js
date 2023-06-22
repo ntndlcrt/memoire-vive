@@ -21,7 +21,7 @@ export default async function Page() {
     return (
         <div className="w-[25vw] flex flex-col items-center mx-auto">
             <span className="text-[2.78vw] font-bold mb-[2.22vw]">
-                Let's get to know
+                Let&apos;s get to know
             </span>
             <Form user={currentUser} />
         </div>
