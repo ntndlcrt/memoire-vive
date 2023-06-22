@@ -13,13 +13,11 @@ export function SignInButton() {
 
     if (status === 'authenticated') {
         return (
-            <Link href={`/dashboard`}>
-                <Image
-                    src={session.user?.image ?? '/mememan.webp'}
-                    width={32}
-                    height={32}
-                    alt="Your Name"
-                />
+            <Link
+                href={`/dashboard`}
+                className="w-[2.22vw] block aspect-square overflow-hidden rounded-[50%] relative"
+            >
+                <Image src={session.user?.image} fill={true} alt="Your Name" />
             </Link>
         )
     }

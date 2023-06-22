@@ -52,9 +52,16 @@ export default function Hero() {
                     Learn more
                 </Link>
             </div>
+            <div className="absolute inset-0 z-20 mix-blend-overlay fade-out-div">
+                <Image
+                    src="/images/patterns/auth-signin.webp"
+                    fill={true}
+                    alt=""
+                />
+            </div>
             <div
                 ref={elementRef}
-                className="absolute w-[135vw] h-[135vw] bottom-0 translate-y-[20vw]"
+                className="absolute w-[135vw] h-[135vw] bottom-0 translate-y-[20vw] z-10"
             >
                 <Image
                     src="/images/gradients/hp-hero.webp"
