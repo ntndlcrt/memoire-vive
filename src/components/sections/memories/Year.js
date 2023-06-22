@@ -245,17 +245,17 @@ export function SecondYear() {
                                 unwavering joy. Watching you grow into the
                                 remarkable person you are today has been an
                                 extraordinary privilege, and I am forever
-                                grateful for the beautiful moments we've shared
-                                together. Your laughter, your smile, and the
-                                warmth of your embrace have the power to heal my
-                                soul and remind me of the purest form of love
-                                that exists.
+                                grateful for the beautiful moments we&apos;ve
+                                shared together. Your laughter, your smile, and
+                                the warmth of your embrace have the power to
+                                heal my soul and remind me of the purest form of
+                                love that exists.
                                 <br />
                                 <br />
                                 As your father, I promise to always be there for
-                                you, guiding and supporting you through life's
-                                twists and turns. You are my pride, my
-                                inspiration, and the embodiment of everything
+                                you, guiding and supporting you through
+                                life&apos;s twists and turns. You are my pride,
+                                my inspiration, and the embodiment of everything
                                 that is good in this world. I love you more than
                                 words can convey, my beloved daughter.
                             </p>
