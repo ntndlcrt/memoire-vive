@@ -152,14 +152,11 @@ export function FirstYear() {
 export function SecondYear() {
     const yearContainerRef = useRef(null)
     const yearElementRef = useRef(null)
-    const quoteElementRef = useRef(null)
 
     gsap.registerPlugin(ScrollTrigger)
 
     useEffect(() => {
         let ctx = gsap.context((self) => {
-            const memories = gsap.utils.toArray('.memory')
-
             gsap.set(yearElementRef.current, {
                 fontSize: '42.22vw',
             })
@@ -167,7 +164,7 @@ export function SecondYear() {
             const tlYear = gsap.timeline({
                 scrollTrigger: {
                     trigger: yearContainerRef.current,
-                    start: 'top top',
+                    start: 'top bottom',
                     end: '+=25%',
                     scrub: 0.5,
                 },
@@ -176,26 +173,6 @@ export function SecondYear() {
             tlYear.to(yearElementRef.current, {
                 fontSize: '2.22vw',
             })
-
-            const tlQuote = gsap.timeline({
-                scrollTrigger: {
-                    trigger: quoteElementRef.current,
-                    start: 'top center',
-                    end: 'bottom center',
-                    scrub: 0.5,
-                },
-            })
-
-            // memories.forEach((memory, i) => {
-            //     tlMemories.to(
-            //         memory,
-            //         {
-            //             yPercent: yPercents[i],
-            //             ease: 'none',
-            //         },
-            //         '<'
-            //     )
-            // })
         }, yearContainerRef)
         return () => ctx.revert()
     }, [])
@@ -230,10 +207,7 @@ export function SecondYear() {
                                     01:23
                                 </span>
                             </div>
-                            <p
-                                ref={quoteElementRef}
-                                className="text-[2.78vw] font-extralight mb-[3.33vw]"
-                            >
+                            <p className="text-[2.78vw] font-extralight mb-[3.33vw]">
                                 My dearest daughter, as I sit here contemplating
                                 the depths of my love for you, words seem
                                 inadequate to express the boundless affection
