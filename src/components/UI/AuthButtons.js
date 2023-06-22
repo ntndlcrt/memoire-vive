@@ -11,18 +11,18 @@ export function SignInButton() {
         return <>...</>
     }
 
-    // if (status === 'authenticated') {
-    //     return (
-    //         <Link href={`/dashboard`}>
-    //             <Image
-    //                 src={session.user?.image ?? '/mememan.webp'}
-    //                 width={32}
-    //                 height={32}
-    //                 alt="Your Name"
-    //             />
-    //         </Link>
-    //     )
-    // }
+    if (status === 'authenticated') {
+        return (
+            <Link href={`/dashboard`}>
+                <Image
+                    src={session.user?.image ?? '/mememan.webp'}
+                    width={32}
+                    height={32}
+                    alt="Your Name"
+                />
+            </Link>
+        )
+    }
 
     return (
         <button className="button" onClick={() => signIn()}>
@@ -38,7 +38,7 @@ export function SignOutButton() {
 export function ProviderButton({ provider }) {
     return (
         <button className="button px-[5vw]" onClick={() => signIn(provider.id)}>
-            <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#AFA7FF] to-[#000099]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#AFA7FF] to-[#000099]">
                 Continue with {provider.name}
             </span>
         </button>

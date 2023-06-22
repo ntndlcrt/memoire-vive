@@ -3,6 +3,10 @@ import Link from 'next/link'
 
 import Logo from '@/components/UI/Logo'
 
+export const metadata = {
+    title: 'Mémoire Vive - Création de profil',
+}
+
 export default function Layout({ children }) {
     return (
         <section className="h-screen w-screen flex flex-col items-center justify-center overflow-hidden bg-black">
