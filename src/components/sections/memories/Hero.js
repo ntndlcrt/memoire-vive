@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
@@ -33,24 +32,23 @@ export default function Hero() {
     }, [])
 
     return (
-        <section
-            ref={containerRef}
-            className="w-screen h-screen flex items-center justify-center relative mb-[15vw] bg-black"
-        >
-            <div className="z-40 flex flex-col items-center row">
-                <h1 className="leading-[0.9] flex flex-col mb-[1.11vw]">
-                    <span className="text-[6vw]">Preserve the legacy,</span>
-                    <span className="font-bit text-[10vw]">
-                        Relive the moment
-                    </span>
-                </h1>
-                <p className="w-1/2 font-light text-center mb-[1.67vw]">
-                    Unlock the treasure chest of memories and bring cherished
-                    moments back to life with our unique platform.
+        <section ref={containerRef} className="relative bg-black">
+            <div className="row flex flex-col items-center justify-center text-center h-screen relative z-40">
+                <div className="w-[9.17vw] aspect-square overflow-hidden rounded-[50%] block relative mb-[2.22vw]">
+                    <Image
+                        src="/images/users/evan.webp"
+                        fill={true}
+                        alt="Evan fasquelle"
+                    />
+                </div>
+                <span className="mb-[5.55vw] font-bit leading-[1] text-[4vw] uppercase">
+                    Evan Fasquelle
+                </span>
+                <p className="text-[3vw] font-extralight">
+                    “ Lorem ipsum dolor sit amet consectetur. Viverra morbi
+                    tristique bibendum libero turpis adipiscing ultricies.
+                    Placerat ultrices non nunc ultricies. “
                 </p>
-                <Link href="/#about" className="button">
-                    Learn more
-                </Link>
             </div>
             <div className="absolute inset-0 z-20 mix-blend-overlay fade-out-div">
                 <Image
@@ -61,7 +59,7 @@ export default function Hero() {
             </div>
             <div
                 ref={elementRef}
-                className="absolute w-[135vw] h-[135vw] bottom-0 translate-y-[20vw] z-10 left-1/2 -translate-x-1/2"
+                className="absolute w-[135vw] h-[135vw] bottom-0 translate-y-[20vw] z-10 -translate-x-1/2 left-1/2"
             >
                 <Image
                     src="/images/gradients/hp-hero.webp"

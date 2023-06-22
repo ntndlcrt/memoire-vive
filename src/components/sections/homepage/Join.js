@@ -36,19 +36,19 @@ export default function Join() {
             tl.to(elementRef.current, {
                 clipPath: 'inset(0vw 0vw round 0vw)',
             })
-            tl.to(
-                shapesRef.current,
-                {
-                    yPercent: 0,
-                },
-                '<'
-            )
-            tl.add(() => {
-                gsap.set(elementRef.current, {
-                    overflow: 'visible',
-                    clipPath: 'none',
+                .to(
+                    shapesRef.current,
+                    {
+                        yPercent: 0,
+                    },
+                    '<'
+                )
+                .add(() => {
+                    gsap.set(elementRef.current, {
+                        overflow: 'visible',
+                        clipPath: 'none',
+                    })
                 })
-            })
         }, containerRef)
 
         return () => ctx.revert()
