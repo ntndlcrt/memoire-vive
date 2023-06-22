@@ -28,6 +28,13 @@ export default function About() {
                         Lorem ipsum dolor sit amet consectetur. Ut volutpat
                         sollicitudin etiam parturient eleifend mattis id sapien.
                     </p>
+                    <div className="h-[24.6vw] w-[34.8vw] absolute right-0 bottom-[2.22vw]">
+                        <Image
+                            src="/images/pictures/dashboard.webp"
+                            alt=""
+                            fill={true}
+                        />
+                    </div>
                 </div>
             </div>
         </section>
