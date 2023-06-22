@@ -25,7 +25,7 @@ export default function SoundButton() {
                 <path
                     d="M31.0691 16.9297C32.9438 18.805 33.9969 21.348 33.9969 23.9997C33.9969 26.6513 32.9438 29.1944 31.0691 31.0697M27.5391 20.4597C28.4764 21.3973 29.003 22.6689 29.003 23.9947C29.003 25.3205 28.4764 26.592 27.5391 27.5297"
                     stroke="white"
-                    stroke-width="2"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                 />
