@@ -65,9 +65,9 @@ export default function Reviews() {
                 </div>
                 <div className="card w-[29.375vw] h-[36.38vw] absolute left-1/2 -translate-x-1/2 top-1/2 bg-[#6B5FFF] z-40 rounded-[2.77vw] flex flex-col justify-center items-center -rotate-[4deg]">
                     <h1 className="text-center text-[2vw] leading-[1.2] text-white w-3/4">
-                        I'm incredibly grateful for this memory service. They
-                        provided a seamless and efficient experience, allowing
-                        me to cherish forgotten moments.
+                        I&apos;m incredibly grateful for this memory service.
+                        They provided a seamless and efficient experience,
+                        allowing me to cherish forgotten moments.
                     </h1>
                     <p className="text-[2.22vw] uppercase items-center text-center font-bit mt-[2.22vw]">
                         Sophia Rodriguez
